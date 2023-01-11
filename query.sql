@@ -58,4 +58,3 @@ WHERE `phone` IS NULL;
     SELECT * 
     FROM `teachers`
     WHERE `phone` IS NULL;
-
