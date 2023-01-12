@@ -31,8 +31,8 @@ WHERE `teachers`.`id` = 44;
 
 --4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
-SELECT `students`.`name` AS `Nome`,
-		`students`.`surname` AS `Cognome`,
+SELECT `students`.`surname` AS `Cognome`,
+		`students`.`name` AS `Nome`,
         `degrees`.`name` AS `Corso`,
         `departments`.`name` AS `Dipartimento`,
         `students`.`enrolment_date` AS `data_iscrizione`
@@ -41,7 +41,7 @@ INNER JOIN `degrees`
 	ON `degrees`.`id` = `students`.`degree_id`
 INNER JOIN `departments`
 		ON `departments`.`id` = `degrees`.`department_id`
-ORDER BY `surname`, `students`.`name` ASC;
+ORDER BY `surname`, `students`.`name` ASC
 
 --5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
@@ -74,3 +74,4 @@ INNER JOIN `departments`
 WHERE `departments`.`name` LIKE "%Matematica";
 
 --7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
+
