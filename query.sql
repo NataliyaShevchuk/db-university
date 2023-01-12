@@ -23,6 +23,11 @@ WHERE YEAR(`date_of_birth`)<="1993";
     FROM `students`
     WHERE (YEAR(CURRENT_DATE)) - (YEAR(`date_of_birth`)) > 30;
 
+    --oppure con Timestampdiff
+    SELECT *, TIMESTAMPDIFF(YEAR, `date_of_birth`, NOW())
+    FROM `students`
+    WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, NOW()) > 30;
+
 -- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
 
 SELECT * 
